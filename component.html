@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorization of Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: white;
+            /* background: url("/dashboard/img4.jpg") no-repeat center center/cover; */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #bdbfc0;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center;
+            align-items: center; */
+            padding: 20px;
+            padding-top: 0px;
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            padding-top: 150%;
+        }
+
+        .sidebar .menu {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar .menu li {
+            margin: 10px 0;
+            text-align: left;
+            padding: 10px;
+            background-color: #1d7f8b;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .sidebar .menu li:hover {
+            background-color: #165b63;
+            cursor: pointer;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #44d9e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .category {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+        }
+
+        .category-text {
+            flex: 1;
+        }
+
+        .category-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul class="menu">
+                <li>User Profile</li>
+                <li>Material Composition Analysis</li>
+                <li>Categorization</li>
+                <li>Recycling Information</li>
+                <li>Lifetime Stats</li>
+            </ul>
+            <a href="/home.html" class="back-button">Go Back</a>
+        </div>
+        <div class="content">
+            <div class="title">Categorization</div>
+            <div class="circle">CATEGORIZATION OF COMPONENTS</div>
+            <div class="categories">
+                <div class="category">
+                    <img src="/img7.jpg" alt="Metallic">
+                    <div class="category-text">
+                        <div class="category-title">Metallic Components</div>
+                        <div>Conducts initial project assessments and identifies client needs and objectives.</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="/img8.jpg" alt="Non-Metallic">
+                    <div class="category-text">
+                        <div class="category-title">Non-Metallic Components</div>
+                        <div>Gathers relevant data and information through research, surveys, and interviews.</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="/img9.jpg" alt="Hazardous">
+                    <div class="category-text">
+                        <div class="category-title">Hazardous Materials</div>
+                        <div>Translates strategic plans and recommendations into actionable steps.</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="/img8.jpg" alt="Non-Hazardous">
+                    <div class="category-text">
+                        <div class="category-title">Non-Hazardous Materials</div>
+                        <div>Evaluates project outcomes against defined metrics and objectives.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

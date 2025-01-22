@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Required</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #162447;
+            color: white;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .back-button {
+            background-color: #00d4d4;
+            color: #162447;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .back-button:hover {
+            background-color: #00b3b3;
+        }
+
+        .back-button:after {
+            content: "\2190";
+            /* Left arrow */
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .product-details {
+            margin-bottom: 30px;
+        }
+
+        .product-details p {
+            margin: 5px 0;
+        }
+
+        .tools-list {
+            margin-top: 20px;
+        }
+
+        .tools-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tools-list ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tools-list img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/dash/dash.html" class="back-button">Go Back</a>
+        <h1>Tools Required</h1>
+
+        <div class="product-details">
+            <p><strong>Product Details</strong></p>
+            <p>Product Category: Mouse</p>
+            <p>Brand Name: HP</p>
+            <!-- <p>Model: HP mouse</p> -->
+        </div>
+
+        <div class="tools-list">
+            <p><strong>Tools List</strong></p>
+            <ul>
+                <li>
+                    <img src="/img1.jpg" alt="Tool 1">
+                    <span> Phillips screwdriver has a head with pointed edges in the shape of a cross, which fit neatly
+                        into the cross slots of a Phillips screw</span>
+                </li>
+                <li>
+                    <img src="/img3.jpg" alt="Tool 2">
+                    <span>Flathead screwdriver is a tool with a flat, wedge-shaped tip that's used to tighten or loosen
+                        screws with a straight slot in the head</span>
+                </li>
+                <li>
+                    <img src="/img11.jpg" alt="Tool 3">
+                    <span>Tweezers tool are small, hand-held tools used to grasp, hold, or manipulate objects that are
+                        too small to
+                        handle with your fingers</span>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

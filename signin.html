@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-left: 200px;
+            padding-top: 150px;
+            display: flex;
+            align-items: start;
+            height: 100vh;
+            background: url("/img6.jpg") no-repeat center center/cover;
+        }
+
+        .signin-container {
+            background: #f6f3f3;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            align-items: center;
+        }
+
+        .signin-container h2 {
+            font-weight: bolder;
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .signin-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signin-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .signin-footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signin-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signin-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin-container">
+        <h2>Sign In</h2>
+        <form id="signinForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="signin-btn">Sign In</button>
+        </form>
+        <div class="signin-footer">
+            Don't have an account? <a href="/signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const signinForm = document.getElementById("signinForm");
+
+            signinForm.addEventListener("submit", async function (event) {
+                event.preventDefault(); // Prevent default form submission behavior
+
+                // Fetch input values
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                // API Gateway endpoint URL
+                const apiEndpoint = "https://8xssllqvo8.execute-api.us-east-1.amazonaws.com/SignInstage0900150125/signin";
+
+                // Construct the request payload
+                const requestData = {
+                    email: email,
+                    password: password,
+                };
+
+                try {
+                    // Make POST request to AWS API Gateway
+                    const response = await fetch(apiEndpoint, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(requestData),
+                    });
+
+                    // Parse the JSON response
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Successful login
+                        alert("Login successful!");
+                        // Redirect to the dashboard or another page
+                        window.location.href = "/home.html";
+                    } else {
+                        // Handle errors (e.g., incorrect credentials)
+                        alert(result.message || "Invalid email or password. Please try again.");
+                    }
+                } catch (error) {
+                    console.error("Error during login:", error);
+                    alert("An error occurred while logging in. Please try again later.");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
